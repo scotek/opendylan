@@ -40,10 +40,14 @@ is just boilerplate.
 Once you've set the ``OPEN_DYLAN_USER_REGISTRIES`` environment variable
 to point to our new registry, ``dylan-compiler`` can find the
 hello-world library source no matter what directory you're currently
-working in.  You only need to specify the library name::
+working in.  The results of the build (the ``_build/`` directory) will
+be put in the current directory, not in the location of the source files.
+To build, you only need to specify the library name::
 
   $ cd /tmp
   $ dylan-compiler -build hello-world
+  $ _build/bin/hello-world
+  Hello, World!
 
 You can add more than one registry to ``OPEN_DYLAN_USER_REGISTRIES`` by
 separating them with colons::
