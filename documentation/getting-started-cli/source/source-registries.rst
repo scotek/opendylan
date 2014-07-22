@@ -30,12 +30,17 @@ Now let's look at the actual content of our hello-world registry file::
 
   abstract://dylan/hello-world/hello-world.lid
 
-What this is doing is locating a file *relative to the directory that
-the registry itself is in*.  If the "registry" directory is
-``/home/you/dylan/registry`` then this registry file says the
-hello-world .lid file is in
-``/home/you/dylan/hello-world/hello-world.lid``.  "abstract://dylan/"
-is just boilerplate.
+This line is made up of two parts:
+
+  - ``abstract://dylan/`` is some boilerplate we can just copy for now.
+
+  - ``hello-world/hello-world.lid`` is the location of the library's .lid
+    file *relative to the directory that the registry itself is in*.
+    
+    If the "registry" directory is
+    ``/home/you/mysrc/registry`` then this registry file says the
+    hello-world .lid file is in
+    ``/home/you/mysrc/hello-world/hello-world.lid``.
 
 Once you've set the ``OPEN_DYLAN_USER_REGISTRIES`` environment variable
 to point to our new registry, ``dylan-compiler`` can find the
